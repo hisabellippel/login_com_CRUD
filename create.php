@@ -1,51 +1,49 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Viuva Negra</title>
+</head>
 <?php
+
 include 'db.php';
 
-if (isset($_POST['salvar'])) {
-    $username = $_POST['username'];
-    $senha = $_POST['senha'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $sql = "INSERT INTO times (username, senha) VALUES ('$username', '$senha')";
+    $user = $_POST["username"] ?? "";
+    $pass = $_POST["senha"] ?? "";
 
-    if ($conn->query($sql)) {
-        header("Location: read.php");
-        exit;
+    $sql = " INSERT INTO usuarios (username,senha) VALUE ('$user','$pass')";
+
+    if ($conn->query($sql) === true) {
+        echo "Novo registro criado com sucesso.";
     } else {
-        echo "<div class='alert alert-danger mt-3'>Erro: " . $conn->error . "</div>";
+        echo "Erro " . $sql . '<br>' . $conn->error;
     }
+    $conn->close();
 }
+
 ?>
+
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doc</title>
-    <link rel="stylesheet" href="../style/style.css">
-
+    <title>Caso você não tenha cadastro ainda, crie seu cadastro:</title>
 </head>
+
 <body>
-    <div class="container mt-4">
-        <h2>Cadastrar usuários</h2>
 
-        <form method = "POST" action="create.php">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" name="nome" id="nome" required>
-            </div>
+    <form method="post" action="create.php">
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
 
-            <div class="mb-3">
-                <label for="email" class="form-label">Senha:</label>
-                <input type="text" class="form-control" name="email" id="email" required>
-            </div>
+    <a href="login.php">Clique aqui caso já tenha cadastro</a>
 
-
-            <div class="col-12">
-                <button type="submit" name="salvar" class="btn btn-success">Salvar</button>
-                <a href="read.php" class="btn btn-secondary">Cancelar</a>
-            </div>
-
-            <a href="login.php">Clique aqui se você tenha cadastro!</a>
-        </form>
-    </div>    
 </body>
+
 </html>
