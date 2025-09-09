@@ -12,7 +12,7 @@ session_start();
 // 2) Logout
 if (isset($_GET['logout'])) {
     session_destroy();
-    header("Location: login.php");
+    header("Location: index.html");
     exit;
 }
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST["username"] ?? "";
     $pass = $_POST["password"] ?? "";
 
-    $stmt = $mysqli->prepare("SELECT id, username, senha FROM usuarios WHERE username=? AND senha=?");
+    $stmt = $mysqli->prepare("SELECT pk, username, senha FROM usuarios WHERE username=? AND senha=?");
     $stmt->bind_param("ss", $user, $pass);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->close();
 
     if ($dados) {
-        $_SESSION["user_id"] = $dados["id"];
+        $_SESSION["user_pk"] = $dados["pk"];
         $_SESSION["username"] = $dados["username"];
-        header("Location: login.php");
+        header("Location: index.html");
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
 
-<?php if (!empty($_SESSION["user_id"])): ?>
+<?php if (!empty($_SESSION["user_pk"])): ?>
   <div class="card">
     <h3>Bem-vindo, <?= $_SESSION["username"] ?>!</h3>
     <p>Sessão ativa.</p>
