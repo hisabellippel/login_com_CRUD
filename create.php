@@ -35,14 +35,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
-
+<h3>Cadastrar novos usuários</h3>
     <form method="post" action="create.php">
       <input type="text" name="username" placeholder="Usuário" required>
       <input type="password" name="senha" placeholder="Senha" required>
       <button type="submit">Entrar</button>
     </form>
 
-    <a href="login.php">Clique aqui caso já tenha cadastro</a>
+    <a href="login.php">Cancelar</a>
 
 </body>
 

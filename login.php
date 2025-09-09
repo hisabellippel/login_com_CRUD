@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       <button type="submit">Entrar</button>
     </form>
     <p><small>Dica: admin / 123456</small></p>
+    <a href="create.php">Cadastrar usuário</a>
   </div>
 <?php endif; ?>
 
