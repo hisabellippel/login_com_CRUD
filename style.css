@@ -1,0 +1,90 @@
+body{ margin: 0px;
+    padding: 0px;    
+    background-color: rgb(197, 31, 31);
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    
+    #navbar{ margin: 0px;
+    padding: 5px;
+    background-color: rgb(197, 22, 22);
+    color: rgb(255, 255, 255);
+    text-align: center;}
+    
+    #sobre{
+        border-style: solid;
+        border: 5px;
+        color: aliceblue;
+        margin: 5px;
+        padding: 50px;
+        background-color: rgb(197, 27, 27);
+        color: rgb(0, 0, 0);
+        display: flex;
+        border-color: rgb(0, 0, 0);
+    }
+    
+    
+     .s{
+        color: aliceblue;
+        margin: 5px;
+        padding: 100px;
+        background-color: rgb(255, 0, 0);
+        border: 5px;
+        border-style: solid;
+        border-color: rgb(0, 0, 0);
+        }
+      
+
+
+    #icone{
+    width: 400px;
+     }
+            
+     img{
+         width: 350px;
+         height: 250px;
+     }
+     #viloes{
+        border-style: solid;
+        border: 5px;
+        color: aliceblue;
+        margin: 5px;
+        padding: 50px;
+        background-color: rgb(197, 27, 27);
+        color: rgb(0, 0, 0);
+        display: flex;
+        border-color: rgb(0, 0, 0);
+    }
+    
+    
+     .vilao{
+        color: aliceblue;
+        margin: 5px;
+        padding: 100px;
+        background-color: rgb(255, 4, 4);
+        border: 5px;
+        border-style: solid;
+        border-color: rgb(0, 0, 0);
+        }
+
+        #aliados{
+            border-style: solid;
+        border: 5px;
+        color: aliceblue;
+        margin: 5px;
+        padding: 50px;
+        background-color: rgb(197, 27, 27);
+        color: rgb(0, 0, 0);
+        display: flex;
+        border-color: rgb(0, 0, 0);
+        }
+        
+        
+         .vingadores{
+            color: aliceblue;
+            margin: 5px;
+            padding: 100px;
+            background-color: rgb(255, 4, 4);
+            border: 5px;
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            }
